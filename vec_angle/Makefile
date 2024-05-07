@@ -13,6 +13,9 @@ all: $(BINS)
 
 avx: CFLAGS += -mavx
 
+sse_fma: CFLAGS += -mfma
+avx_fma: CFLAGS += -mfma
+
 %: %.c | $(DATS)
 	$(CC) $< -o $@ $(CFLAGS)
 
